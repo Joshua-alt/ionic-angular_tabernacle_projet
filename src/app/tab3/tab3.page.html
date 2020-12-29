@@ -1,17 +1,82 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+
+<ion-content>
+  <ion-header class="ion-no-border">
     <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
+     
+      <ion-button slot="start">
+        <ion-back-button defaultHref="/admin-dashboard"> </ion-back-button>
+     </ion-button>
+       
+      
+   
+      <ion-title>Photo</ion-title>
     </ion-toolbar>
+    
   </ion-header>
-
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+    <div class="slides ion-margin-bottom">
+      <ion-slides >
+        <ion-slide  *ngFor="let channel of ListeChannel | async">
+          <ion-card>
+            <ion-header>
+               <div class="main">
+                 <!-- youtube image -->
+                 <img src="#" alt="">
+               </div>
+               <!-- sutYoutube image -->
+               <img src="" alt="">
+            </ion-header>
+            <ion-card-content class="ion-text-left">
+              <ion-card-title class="ion-margin-bottom">{{ channel.NomChannel}}</ion-card-title>
+              <ion-card-subtitle class="ion-text-right">{{ channel.channelDescription }}</ion-card-subtitle>
+              <ion-button slot="end" fill="clear" color="danger" (click)="DeleteChannel(channel.id)">
+                <ion-icon slot="icon-only" name="trash"></ion-icon>
+              </ion-button>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+        
+      </ion-slides>
+    </div>
+    <div class="container">
+      <h2>Chaine Youtube</h2>
+      <form  class="ion-align-items-center" [formGroup]="createChannelForm" (submit)="createChannel()">
+        <ion-item>
+          <ion-label stacked>Nom de chaine</ion-label>
+  
+          <ion-select formControlName="ChannelName">
+            <ion-select-option value="FR">FR</ion-select-option>
+            <ion-select-option value="SW">SW</ion-select-option>
+            <ion-select-option value="En">En</ion-select-option>
+           
+          </ion-select>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label stacked>Id de chaine</ion-label>
+          <ion-input
+            formControlName="idchannel"
+            type="text"
+            placeholder="Entre Id de votre channel youtube">
+          </ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label stacked>Chaine Description</ion-label>
+          <ion-textarea
+            formControlName="ChannelDescription"
+            type="text"
+            placeholder="Description"
+          >
+          </ion-textarea>
+        </ion-item>
+    
+        <ion-button expand="block" type="submit" [disabled]="!createChannelForm.valid">
+          Ajouter chaine
+        </ion-button>
+      </form>
+    </div>
+    
 </ion-content>
+
+

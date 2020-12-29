@@ -1,17 +1,62 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+
+<ion-content>
+  <ion-header class="ion-no-border">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-avatar class="bordered"  slot="end" fill="solid" color="light" >
+      <a href="https://web.whatsapp.com/send?phone=243822271584"> 
+        
+          <img  src="https://cdn.iphoneincanada.ca/wp-content/uploads/2014/02/whatsapp.png" >
+      
+      </a>
+    </ion-avatar>
+          
+           <ion-tab-button >
+             
+           </ion-tab-button>
+   
+      <ion-title>Gallerie</ion-title>
     </ion-toolbar>
+    
   </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+    <div class="slides ion-margin-bottom">
+     
+    </div>
+  
+    <div class="container" *ngFor="let item of items | async">
+      <ion-thumbnail *ngIf="item.imageUrl">
+       <a href="{{ item.imageUrl }}"> <img [src]="item.imageUrl" class="ppp"></a>
+      </ion-thumbnail>
+      <ion-item lines="none" >
+        <ion-grid>
+          <ion-row class="ion-align-items-center">
+            <ion-col size="3"> 
+              <ion-label >
+               
+              </ion-label>
+            </ion-col>
+            
+            <ion-col size="7"> 
+              <ion-label >
+                <h4>{{ item.title }}</h4>
+                <H6>Meilleure photo </H6>
+              </ion-label>
+            </ion-col>
+            <ion-col size="2" class="image">
+              <ion-button color="light" fill="clear">
+                <ion-icon name="images-outline"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        
+      </ion-item>
+      
+    </div>
+    
 </ion-content>
+
+
+  
+
+

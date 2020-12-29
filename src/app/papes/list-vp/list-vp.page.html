@@ -1,0 +1,57 @@
+
+
+<ion-content>
+  <ion-header class="ion-no-border">
+    <ion-toolbar>
+     
+      <ion-button slot="start">
+        <ion-back-button defaultHref="/admin-dashboard"> </ion-back-button>
+     </ion-button>
+       
+     <ion-button slot="end" class="bordered" fill="solid" color="light">
+      <ion-icon name="logo-youtube"></ion-icon>
+    </ion-button>
+   
+      <ion-title>Video</ion-title>
+    </ion-toolbar>
+    
+  </ion-header>
+    <div class="slides ion-margin-bottom">
+      <ion-slides [options]="slidesOptions">
+        <ion-slide>
+          <ion-card>
+            <ion-header>
+               <div class="main">
+                 <!-- youtube image -->
+                 <img src="https://cdn.pixabay.com/photo/2017/06/23/02/35/youtube-2433301_960_720.png" alt="">
+               </div>
+               <!-- sutYoutube image -->
+              
+            </ion-header>
+            <ion-card-content class="ion-text-left">
+              <img class="immag" src="https://cdn.pixabay.com/photo/2017/06/23/02/35/youtube-2433301_960_720.png" alt="">
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+        <ion-slide>
+          <ion-card>
+            <ion-header>
+               <div class="main">
+                 <!-- youtube FRANCAIS image -->
+                 <img src="https://cdn.pixabay.com/photo/2014/03/25/15/24/movie-296751_960_720.png" alt="">
+               </div>
+               <!-- sutYoutube image -->
+               <img src="" alt="">
+            </ion-header>
+            <ion-card-content class="ion-text-left">
+              <ion-card-title class="ion-margin-bottom">Awesom </ion-card-title>
+              <ion-card-subtitle class="ion-text-right"></ion-card-subtitle>
+              <ion-progress-bar value="0.4" color="warning"></ion-progress-bar>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </div>
+     <app-list-video></app-list-video>
+    
+</ion-content>

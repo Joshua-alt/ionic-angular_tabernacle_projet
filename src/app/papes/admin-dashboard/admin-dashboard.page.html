@@ -1,0 +1,147 @@
+
+
+<ion-content>
+  <ion-header class="ion-no-border">
+    <ion-toolbar>
+      <ion-button  slot="start">
+        <ion-icon name="apps">
+        </ion-icon>
+      </ion-button>
+     
+        <ion-button slot="end" class="bordered" fill="solid" color="light">
+          <ion-icon name="logo-youtube"></ion-icon>
+        </ion-button>
+  
+      <ion-title>adminDashboard</ion-title>
+    </ion-toolbar>
+    <ion-item lines="none">
+      <ion-avatar slot="start">
+        <img src="https://cdn.pixabay.com/photo/2020/09/15/07/22/monitor-5572911_960_720.jpg">
+      </ion-avatar>
+      <ion-label>
+        <p>hello,</p>
+        <h3 >Adminer</h3>
+      </ion-label>
+      <ion-button (click)="quite()" expand="block" fill="clear" shape="round">
+        Déconnexion
+      </ion-button>
+      <ion-button  [routerLink]="['/user-dashboard']" expand="block" fill="clear" shape="round">
+        Enregistrer
+      </ion-button>
+    </ion-item>
+  </ion-header>
+    <div class="slides ion-margin-bottom">
+      <ion-slides [options]="slidesOptions">
+        <ion-slide>
+          <ion-card>
+            <ion-header>
+               <div class="main">
+                 <!-- youtube image -->
+                 <img src="https://cdn.pixabay.com/photo/2017/06/23/02/35/youtube-2433301_960_720.png" alt="">
+               </div>
+               <!-- sutYoutube image -->
+              <ion-icon name="logo-youtube"></ion-icon>
+            </ion-header>
+            <ion-card-content class="ion-text-left">
+              <ion-card-title class="ion-margin-bottom">Awesom </ion-card-title>
+              <ion-card-subtitle class="ion-text-right"></ion-card-subtitle>
+              <ion-progress-bar value="0.5" color="custom"></ion-progress-bar>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+        <ion-slide>
+          <ion-card>
+            <ion-header>
+               <div class="main">
+                 <!-- youtube FRANCAIS image -->
+                 <img src="https://cdn.pixabay.com/photo/2014/03/25/15/24/movie-296751_960_720.png" alt="">
+               </div>
+               <!-- sutYoutube image -->
+               <img src="" alt="">
+            </ion-header>
+            <ion-card-content class="ion-text-left">
+              <ion-card-title class="ion-margin-bottom">Awesom </ion-card-title>
+              <ion-card-subtitle class="ion-text-right"></ion-card-subtitle>
+              <ion-progress-bar value="0.4" color="warning"></ion-progress-bar>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </div>
+  
+    <div class="container">
+      <ion-button color="primary" slot="end">
+        <h4  [routerLink]="['/tab3']">chaine Youtube</h4>
+      </ion-button>
+      <h2 slot="start">Manager</h2>
+      
+      
+      <ion-item lines="none" [routerLink]="['/user']">
+        <ion-grid>
+          <ion-row class="ion-align-items-center">
+            <ion-col size="3">
+              <ion-button color="light" fill="clear">
+                <ion-icon slot="icon-only" name="document"></ion-icon>
+              </ion-button>
+            </ion-col>
+            <ion-col size="7"> 
+              <ion-label>
+                <h4>Utilisateur/user</h4>
+                <H6>Gestion d'utilisateur</H6>
+              </ion-label>
+            </ion-col>
+            <ion-col size="2">
+              <ion-button color="light" fill="clear"  >
+                <ion-icon slot="icon-only" name="user"></ion-icon>
+                
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <ion-item lines="none" [routerLink]="['/list-vp']">
+        <ion-grid>
+          <ion-row class="ion-align-items-center">
+            <ion-col size="3">
+              <ion-button color="light" fill="clear">
+                <ion-icon slot="icon-only" name="film"></ion-icon>
+              </ion-button>
+            </ion-col>
+            <ion-col size="7"> 
+              <ion-label>
+                <h4>Videos</h4>
+                <H6>Voir les videos youtube </H6>
+              </ion-label>
+            </ion-col>
+            <ion-col size="2">
+              <ion-button color="light" fill="clear"  >
+                <ion-icon slot="icon-only" name="logo-youtube"></ion-icon> 
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <ion-item lines="none" [routerLink]="['/firephoto']">
+        <ion-grid>
+          <ion-row class="ion-align-items-center">
+            <ion-col size="3">
+              <ion-button color="light" fill="clear">
+                <ion-icon slot="icon-only" name="film"></ion-icon>
+              </ion-button>
+            </ion-col>
+            <ion-col size="7"> 
+              <ion-label>
+                <h4>Les Photos</h4>
+                <H6>Gestion complete de photo</H6>
+              </ion-label>
+            </ion-col>
+            <ion-col size="2">
+              <ion-button color="light" fill="clear">
+                <ion-icon slot="icon-only" name="images-outline"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </div>
+</ion-content>

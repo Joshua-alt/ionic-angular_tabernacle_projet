@@ -6,6 +6,10 @@ const routes: Routes = [
   {
     path: '',
     component: Tab1Page,
+  },
+  {
+    path: 'taillevideo',
+    loadChildren: () => import('./taillevideo/taillevideo.module').then( m => m.TaillevideoPageModule)
   }
 ];
 

@@ -1,7 +1,13 @@
 {
-  "name": "VIDEO",
+  "name": "tabernacle",
+  "type": "angular",
+  "v2": true,
+  "typescript": true,
+  "id": " e48091bf",
   "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
+  }
 }

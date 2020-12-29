@@ -1,0 +1,126 @@
+ion-header {
+    ion-toolbar, ion-item {
+        --background:#f1f5f8;
+        background:#f1f5f8;
+        padding: 0 10px;
+    }
+    ion-toolbar {
+        .bordered {
+            --border-radius: 10px;
+            --box-shadow: 5px 5px #d1d1d1, -5px -5px 10px #FFFFFF;
+
+        }
+    }
+    ion-item {
+        h3 {
+            font-weight: 700;
+            font-size:14px;
+        }
+        p {
+            font-weight: 500;
+            font-size:14px;
+        }
+        ion-avatar {
+           --border-raduis:40%;
+        }
+    }
+}
+ion-content {
+    --background: linear-gradient(90deg, rgba(43,90,148,1) 0%,rgb(33, 94, 199) 35%, rgb(140, 154, 179) 100%);
+    .slides {
+        background:#f1f5f8;
+        padding: 4px 10px 20px 10px;
+        border-radius:0 0 28px 28px;
+    }
+    ion-card {
+      width: 30px;
+      box-shadow: none;
+      border-radius: 14px;
+      padding: 14px;
+      background:rgba(255,255,255,.8);
+      .main {
+          width: 60px;
+          height: 60px;
+          border-radius: 50px;
+          background: #FFFFFF;
+          box-shadow: 7px 7px 20px #dbdfe2,
+          -7px  -7px 20px #ffffff;
+
+          display: flex;
+          align-items: center;
+          img {
+              width: 30px;
+          }
+      }
+      .files {
+          padding-top: 14px;
+      }
+  }
+  .container {
+      padding: 6px 20px;
+      color: #FFFFFF;
+      width: 100%;
+      
+      ion-item {
+          --background: rgba(255, 255, 255, .1);
+          padding: 0;
+          width: 100%;
+          margin: auto;
+          --border-radius:14px;
+          color: #FFFFFF;
+          font-weight: 600;
+          ion-label {
+              padding:6px 0;
+              h4 {
+                  font-weight: 600;
+                  font-size: 16px;
+              }
+              h6 {
+                  color:rgba(255, 255, 255, .66);
+              }
+          }
+      }
+     h2 {
+         padding-bottom: 8px;
+     }
+  }
+  //personnaliser  with
+  .dimension {
+    box-shadow: 7px 7px 20px ,
+    -7px  -7px 20px rgba(43,90,148,1);
+     margin-top: 20px;
+    
+      width:90%;
+      height: 50%;
+    
+  }
+  .inner{
+      width: 800px;
+      height: 200px;
+      padding-right: 490px;
+  }
+
+  .iframe-container{
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+ }
+ .video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.trasparant{
+     --background: rgba(255, 255, 255, .1);
+          padding: 0;
+          width: 100%;
+          margin: auto;
+          --border-radius:14px;
+          color: #FFFFFF;
+          font-weight: 600;
+}
+ 
+}

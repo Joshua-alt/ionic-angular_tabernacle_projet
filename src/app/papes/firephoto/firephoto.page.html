@@ -1,0 +1,59 @@
+
+
+<ion-content>
+  <ion-header class="ion-no-border">
+    <ion-toolbar>
+     
+      <ion-button slot="start">
+        <ion-back-button defaultHref="/admin-dashboard"> </ion-back-button>
+     </ion-button>
+       
+      
+        
+    <ion-button slot="end" class="bordered" fill="solid" color="light">
+         <ion-icon name="images-outline"></ion-icon>
+    </ion-button>
+   
+      <ion-title>Photo</ion-title>
+    </ion-toolbar>
+    
+  </ion-header>
+    <div class="slides ion-margin-bottom">
+      <ion-slides [options]="slidesOptions">
+        <ion-slide *ngFor="let item of items | async">
+          <ion-card>
+            <ion-header>
+              <ion-label>{{ item.title }} <ion-button slot="end" fill="clear" color="danger" (click)="remove(item)">
+                <ion-icon slot="icon-only" name="trash"></ion-icon>
+              </ion-button></ion-label>
+            </ion-header>
+            <ion-card-content class="ion-text-left">
+        
+              <ion-thumbnail *ngIf="item.imageUrl">
+                <ion-img [src]="item.imageUrl" class="image"></ion-img>
+              </ion-thumbnail>
+              
+              
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+        
+      </ion-slides>
+    </div>
+    <div class="container">
+      <h2>Ajouter Photo</h2>
+      
+      <form class="ion-align-items-center" method="POST" (submit)="addTodo()">
+        <ion-item lines="none">
+          <input type="file" name="inputFile" (change)="chooseFile($event)" required>
+        </ion-item>
+    
+        <ion-item lines="none">
+          <ion-input required name="todo" [(ngModel)]="newTodo" placeholder="Titre de photo"></ion-input>
+        </ion-item>
+    
+        <ion-button color="warning" type="submit">Ajouter</ion-button>
+      </form>
+    </div>
+    
+</ion-content>
