@@ -20,17 +20,18 @@
     
   </ion-header>
     <div class="slides ion-margin-bottom">
-     
+    
+  
     </div>
   
     <div class="container" *ngFor="let item of items | async">
       <ion-thumbnail *ngIf="item.imageUrl">
-       <a href="{{ item.imageUrl }}"> <img [src]="item.imageUrl" class="ppp"></a>
+       <a href="{{item.imageUrl}}"> <img [src]="item.imageUrl" class="ppp"></a>
       </ion-thumbnail>
       <ion-item lines="none" >
         <ion-grid>
           <ion-row class="ion-align-items-center">
-            <ion-col size="3"> 
+            <ion-col size="4"> 
               <ion-label >
                
               </ion-label>
@@ -41,11 +42,7 @@
                 <h4>{{ item.title }}</h4>
                 <H6>Meilleure photo </H6>
               </ion-label>
-            </ion-col>
-            <ion-col size="2" class="image">
-              <ion-button color="light" fill="clear">
-                <ion-icon name="images-outline"></ion-icon>
-              </ion-button>
+            
             </ion-col>
           </ion-row>
         </ion-grid>

@@ -16,10 +16,12 @@
   <br><br>
   <ion-item class="trasparant" >
     <div *ngFor="let channel of ListeChannel |async">
+      <a class="adon" href="https://www.youtube.com/channel/{{channel.IdChannel}}?sub_confirmation=1">Abo:{{channel.NomChannel}}</a>
       <ion-button color="warning" fill="clear" (click)="show(channel.IdChannel)" >
           <ion-icon slot="icon-only" name="film"></ion-icon>
-          <ion-label>{{ channel.NomChannel}}</ion-label>
+          <ion-label>{{channel.NomChannel}}</ion-label>
         </ion-button> 
+        
     </div>
   </ion-item>
 

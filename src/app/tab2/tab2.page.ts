@@ -14,7 +14,6 @@ export class Tab2Page {
 
   newTodo: string = '';
   itemsRef: AngularFirestoreCollection;
-
   selectedFile: any;
   loading: HTMLIonLoadingElement;
   constructor(
