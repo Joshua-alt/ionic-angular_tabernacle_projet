@@ -33,7 +33,7 @@ export class ChanneIDService {
     return this.firestore.collection<channelData>(`channelLIST`).valueChanges();
   }
   getDefaultChannel() {
-    return this.firestore.collection(`channelLIST`, ref => ref.where('NomChannel', '==', 'FR').limit(1)).valueChanges();
+    return this.firestore.collection(`channelLIST`, ref => ref.where('NomChannel', '==', 'Pasteur').limit(1)).valueChanges();
   }
   getChannelDetail(channelId: string): Observable<channelData> {
     return this.firestore.collection('channelLIST').doc<channelData>(channelId).valueChanges();

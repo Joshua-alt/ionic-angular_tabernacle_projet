@@ -12,7 +12,7 @@
       
     </ion-toolbar>
   </ion-header>
-  <ion-searchbar  placeholder="Chercher" inputmode="text" type="text" (ionChange)="onSearchChange($event)" [debounce]="250" showCancelButton="always"></ion-searchbar>
+  <ion-searchbar  placeholder="Rechercher" inputmode="text" type="text" (ionChange)="onSearchChange($event)" [debounce]="250" showCancelButton="always"></ion-searchbar>
   <br><br>
   <ion-item class="trasparant" >
     <div *ngFor="let channel of ListeChannel |async">

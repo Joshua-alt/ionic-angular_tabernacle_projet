@@ -29,6 +29,7 @@ export class UserDashboardPage implements OnInit {
 
    async register(){
     const loading = await this.loadingCtrl.create();
+    await loading.present();
     const email = this.createForm.value.email;
     const pw = this.createForm.value.pw;
     const Confirme= this.createForm.value.Confirmpw;
@@ -37,7 +38,7 @@ export class UserDashboardPage implements OnInit {
       this.ServAuth.createAccount(email, pw)
       .then(
         () => {
-          loading.dismiss().then(() => {
+          loading.dismiss();
             this.alertCtrl.create({
   
               message: 'Bien enregistrer',
@@ -46,16 +47,22 @@ export class UserDashboardPage implements OnInit {
             }).then(alertEl => {
               alertEl.present();
             });
-          });
+            
+              
         },
-        error => {
-          loading.dismiss().then(() => {
-            console.error(error);
-          });
+        async error => {
+          loading.dismiss();
+              let alert = this.alertCtrl.create({
+                message: 'problem de connexion internet',
+                buttons: ['OK']
+              });
+              (await alert).present();
+           
         }
       );
-    return await loading.present();
+   
     }else{
+      loading.dismiss();
       this.alertCtrl.create({
   
         message: 'S\'il vous plait, les 2 mot de passe ne se correspondent pas',

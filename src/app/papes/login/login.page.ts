@@ -29,10 +29,12 @@ export class LoginPage implements OnInit {
   }
      async signIn(){
       const loading = await this.loadingCtrl.create();
+      await loading.present();
       const email = this.createForm.value.email;
       const pw = this.createForm.value.pw;
       this.ServAuth.login(email, pw).then(async data =>{
         if(data){
+          loading.dismiss();
           this.alertCtrl.create({
   
             message: data,
@@ -49,15 +51,15 @@ export class LoginPage implements OnInit {
               this.ServAuth.getAdminDetail(user.email).subscribe(data => {
                 this.nama = data.isAdmin;
                  if(this.nama){
-                  loading.dismiss().then(() => {
+                  loading.dismiss();
                     this.router.navigateByUrl('/admin-dashboard');
-                  });
+                 
                    
                  }else{
                     console.log("connexion see");
-                     loading.dismiss().then(() => {
+                     loading.dismiss();
                       this.router.navigateByUrl('/tabs/tab1');
-                    });
+                  
                     
                  }
                 
@@ -66,7 +68,7 @@ export class LoginPage implements OnInit {
            
             }
           });
-          return await loading.present();
+         
         }
          
       });
